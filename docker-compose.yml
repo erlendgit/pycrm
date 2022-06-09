@@ -9,7 +9,7 @@ services:
     volumes:
       - ./project:/project
     ports:
-      - 9050:8000
+      - 8000:8000
     depends_on:
       - db
 
@@ -20,14 +20,9 @@ services:
       - db-data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: secret
+      POSTGRES_DB: pycrm
     ports:
-    - 9051:5432
-
-  mailcatcher:
-    restart: on-failure:10
-    image: dockage/mailcatcher:0.7.1
-    ports:
-    - 9052:1080
+    - 8032:5432
 
 volumes:
   db-data:
