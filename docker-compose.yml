@@ -1,0 +1,33 @@
+services:
+
+  web:
+    build: .
+    image: busyness:latest
+    hostname: web
+    env_file:
+      - ./.env
+    volumes:
+      - ./project:/project
+    ports:
+      - 9050:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    hostname: db
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: secret
+    ports:
+    - 9051:5432
+
+  mailcatcher:
+    restart: on-failure:10
+    image: dockage/mailcatcher:0.7.1
+    ports:
+    - 9052:1080
+
+volumes:
+  db-data:
