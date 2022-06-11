@@ -9,6 +9,9 @@ Authentication
 Content
 
 * Contacts
+  * Model ✅
+  * Views
+  * Forms
 * Companies
 * Todo's
 * Journal
