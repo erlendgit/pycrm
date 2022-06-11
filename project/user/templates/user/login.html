@@ -1,0 +1,8 @@
+{% load i18n %}
+<div class="user-login-form">
+    <form method="post" action="{% url "user:login" %}">
+        {% csrf_token %}
+        {{ form }}
+        <button name="submit" type="submit">{% trans "Login" %}</button>
+    </form>
+</div>

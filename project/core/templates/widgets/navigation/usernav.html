@@ -1,0 +1,10 @@
+{% load i18n %}
+<ul class="navigation navigation__user">
+    {% if user.is_authenticated %}
+        <li>{% blocktrans with account=user.email %}Account: {{ account }}{% endblocktrans %}</li>
+        <li><a href="{% url "admin:index" %}">{% trans "Site management" %}</a></li>
+        <li><a href="{% url "user:logout" %}">{% trans "Logout" %}</a></li>
+    {% else %}
+        <li><a href="{% url "user:login" %}">{% trans "Login" %}</a></li>
+    {% endif %}
+</ul>

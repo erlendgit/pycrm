@@ -1,5 +1,8 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse("Hi!")
+    return render(request, 'core/home.html', {
+        'user': request.user
+    })

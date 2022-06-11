@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-09 23:00+0200\n"
+"POT-Creation-Date: 2022-06-11 10:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,14 +25,26 @@ msgstr "CRM"
 msgid "User registration"
 msgstr "Gebruikersregistratie"
 
-#: user/models.py:33
+#: user/forms.py:23
+msgid "E-mail"
+msgstr ""
+
+#: user/forms.py:24
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: user/models.py:35
 msgid "email address"
 msgstr "e-mail adres"
 
-#: user/models.py:39
+#: user/models.py:42
 msgid "User account"
 msgstr "Gebruikersaccount"
 
-#: user/models.py:40
+#: user/models.py:43
 msgid "User accounts"
 msgstr "Gebruikersaccounts"
+
+#: user/templates/user/login.html:6
+msgid "Login"
+msgstr "Inloggen"
