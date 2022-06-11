@@ -19,12 +19,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1b5oo7+f*zbie^&^cnr327v3_7-#+14ic7!n&y81u#mo2js@g8'
+SECRET_KEY = 'evm%g)%ocda(z^vt#%yovnrp+0$g=iv3j)p7guh9f@iz5*5qzd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 # Application definition
 
@@ -90,6 +90,8 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = []
+
+LOGIN_URL = '/user/login/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/

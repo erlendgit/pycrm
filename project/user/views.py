@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from core.lib import default_url
+from core.lib import next_or_home
 from user.forms import UserLoginForm
 
 logger = logging.getLogger(__name__)
@@ -21,9 +21,9 @@ def login(request):
         form = UserLoginForm(data=request.POST)
         if form.is_valid():
             django_login(request, form.user)
-            return HttpResponseRedirect(default_url(request))
+            return HttpResponseRedirect(next_or_home(request))
     else:
-        form = UserLoginForm()
+        form = UserLoginForm(initial={"next": next_or_home(request)})
 
     return render(request, 'user/login.html', {
         "form": form,
@@ -33,4 +33,4 @@ def login(request):
 @login_required
 def logout(request):
     django_logout(request)
-    return HttpResponseRedirect(default_url(request))
+    return HttpResponseRedirect(next_or_home(request))

@@ -1,6 +1,11 @@
 import uuid
 
 from django.db import models
+from django.urls import reverse
+
+
+class EntityManager(models.Manager):
+    pass
 
 
 class Entity(models.Model):
@@ -11,4 +16,6 @@ class Entity(models.Model):
     name = models.CharField(max_length=255)
     pitch = models.TextField(null=True, blank=True, default=None)
     profile = models.JSONField(null=True, blank=True, default=None)
+
+    objects = EntityManager()
 

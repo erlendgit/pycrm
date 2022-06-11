@@ -30,6 +30,7 @@ class UserLoginForm(forms.Form):
     email = forms.CharField(label=_("E-mail"), required=True)
     password = forms.CharField(label=_("Password"), required=True,
                                widget=forms.PasswordInput(attrs={"autocomplete": "current-password"}))
+    next = forms.CharField(widget=forms.HiddenInput())
 
     def clean_password(self):
         self.user = authenticate(username=self.cleaned_data['email'],

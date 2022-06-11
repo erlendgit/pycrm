@@ -1,0 +1,9 @@
+{% load i18n %}
+<h2>{% trans "Main navigation" %}</h2>
+<ul class="navigation">
+    <li><a href="{% url "core:home" %}">{% trans "Home" %}</a></li>
+    {% if user.is_authenticated %}
+        <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
+        <li><a href="{% url "core:date_convert" %}">{% trans "Date convert" %}</a></li>
+    {% endif %}
+</ul>

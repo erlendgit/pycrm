@@ -1,2 +1,11 @@
-<h1>Welcome!</h1>
-{% include "widgets/navigation/usernav.html" %}
+{% extends 'root.html' %}
+
+{% load i18n %}
+
+{% block content_head %}
+    <h1>{% trans "Welcome" %}</h1>
+{% endblock %}
+
+{% block content %}
+    {% trans "List of recent activities" %}
+{% endblock %}

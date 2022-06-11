@@ -1,0 +1,21 @@
+{% extends "page.html" %}
+
+{% load i18n %}
+
+{% block content_head %}
+    <h1>Entity index.</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="entity-list">
+        {% if entities.count > 0 %}
+            <ul>
+                {% for entity in entities %}
+                    <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            {% trans "No entities found." %}
+        {% endif %}
+    </div>
+{% endblock %}

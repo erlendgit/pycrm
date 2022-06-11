@@ -1,8 +1,9 @@
 {% load i18n %}
 <div class="user-login-form">
-    <form method="post" action="{% url "user:login" %}">
+    <form method="post" action="{% url "user:login" %}{% if next %}?next={{ next }}{% endif %}">
         {% csrf_token %}
         {{ form }}
         <button name="submit" type="submit">{% trans "Login" %}</button>
     </form>
 </div>
+{{ url }}

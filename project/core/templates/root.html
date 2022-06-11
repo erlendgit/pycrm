@@ -1,0 +1,22 @@
+<div id="page" role="document">
+    {% block content_head %}
+    {% endblock %}
+
+    {% block messages %}
+        {% include "widgets/messages.html" %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+</div>
+
+<div id="navigation" role="navigation">
+    {% block navigation %}
+        <div class="main-navigation">
+            {% include "widgets/navigation/mainnav.html" %}
+        </div>
+        <div class="user-navigation">
+            {% include "widgets/navigation/usernav.html" %}
+        </div>
+    {% endblock %}
+</div>

@@ -1,0 +1,16 @@
+{% extends "page.html" %}
+
+{% load i18n %}
+
+{% block content_head %}
+    <h1>{{ entity.name }}</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
+{% endblock %}
+
+{% block content %}
+    Entity page.
+{% endblock %}

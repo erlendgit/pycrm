@@ -19,11 +19,13 @@ from django.utils.translation import gettext_lazy as _
 
 import core.urls
 import user.urls
+import crm.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include(user.urls)),
+    path('crm/', include(crm.urls)),
     path('', include(core.urls)),
 ]
 
-admin.site.site_header = _('CRM')
+admin.site.site_header = _('Site administration')

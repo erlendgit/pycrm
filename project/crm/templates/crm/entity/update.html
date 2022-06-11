@@ -1,0 +1,17 @@
+{% extends "page.html" %}
+
+{% load i18n %}
+
+{% block content_head %}
+    <h1>{% blocktrans with name=entity.name %}Update {{ name }}{% endblocktrans %}</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
+    <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+{% endblock %}
+
+{% block content %}
+    Entity update form goes here.
+{% endblock %}
