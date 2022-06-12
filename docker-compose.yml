@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
     volumes:
-      - ./django:/django
+      - ./web:/web
       - ./static:/static
       - ./locale:/locale
     ports:

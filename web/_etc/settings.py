@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 ]
 
-ROOT_URLCONF = 'pycrm.urls'
+ROOT_URLCONF = '_etc.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pycrm.wsgi.application'
+WSGI_APPLICATION = '_etc.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

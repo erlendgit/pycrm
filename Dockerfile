@@ -12,8 +12,8 @@ RUN echo  "alias la='ll -a'" >> /etc/bash.bashrc
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
-COPY django /django
-WORKDIR /django
+COPY web /web
+WORKDIR /web
 
 USER www-data
 CMD python manage.py runserver 0.0.0.0:8000
