@@ -2,12 +2,13 @@
 @import 'common/reset';
 @import 'variables';
 
+// https://www.s-ings.com/projects/microns-icon-font/
+$microns-font-file: '../fonts/microns/microns';
+@import '../../../node_modules/microns/fonts/microns';
+
 // Styles.
 @import 'layout/common';
 @import 'navigation/common';
 @import 'navigation/breadcrumbs';
 @import 'common/tags';
 
-// https://www.s-ings.com/projects/microns-icon-font/
-$microns-font-file: '../fonts/microns/microns';
-@import '../../../node_modules/microns/fonts/microns';

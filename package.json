@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "grunt"
+    "build": "grunt build",
+    "watch": "grunt"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "grunt": "^1.5.3",
-    "grunt-cli": "^1.4.3",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sass": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",

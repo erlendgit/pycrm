@@ -1,15 +1,19 @@
 .breadcrumbs__list {
   display: flex;
-}
 
-.breadcrumbs__list > li {
-  margin-right: .5rem;
-}
+  & > li {
+    @extend .mu, .mu-i-right;
+    position: relative;
+    margin: 0 1rem 0 0;
 
-.breadcrumbs__list > li:after {
-  content: " \00B7";
-}
+    &:before {
+      position: absolute;
+      left: -.75rem;
+      top: .05rem;
+    }
 
-.breadcrumbs__list > li:last-child:after {
-  content: "";
+    &:first-child:before {
+      content: '';
+    }
+  }
 }
