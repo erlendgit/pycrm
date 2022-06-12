@@ -1,5 +1,5 @@
 {% load i18n %}
-<h2>{% trans "User navigation" %}</h2>
+<h2 class="visually-hidden">{% trans "User navigation" %}</h2>
 <ul class="navigation">
     {% if user.is_authenticated %}
         <li>{% blocktrans with account=user.email %}Account: {{ account }}{% endblocktrans %}</li>

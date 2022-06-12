@@ -1,22 +1,45 @@
-<div id="page" role="document">
-    {% block content_head %}
-    {% endblock %}
+<!doctype html>
+{% spaceless %}
+    {% load static %}
 
-    {% block messages %}
-        {% include "widgets/messages.html" %}
-    {% endblock %}
+    <html lang="nl-nl">
+    <head>
+        <link rel="stylesheet" href="{% static "css/reset.css" %}">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        <link rel="stylesheet" href="{% static "css/tags.css" %}">
+    </head>
+    <body>
+    <div id="page-wrapper">
+        <div id="page" class="page-center" role="document">
+            {% block content_head %}
+            {% endblock %}
 
-    {% block content %}
-    {% endblock %}
-</div>
+            {% block messages %}
+                {% include "widgets/messages.html" %}
+            {% endblock %}
 
-<div id="navigation" role="navigation">
-    {% block navigation %}
-        <div class="main-navigation">
-            {% include "widgets/navigation/mainnav.html" %}
+            {% block content %}
+            {% endblock %}
         </div>
-        <div class="user-navigation">
-            {% include "widgets/navigation/usernav.html" %}
+
+        <div id="navigation" role="navigation">
+            <div class="top-bar">
+                <div class="page-center navigation-container">
+                    {% block navigation %}
+                        <div class="main-navigation">
+                            {% include "widgets/navigation/mainnav.html" %}
+                        </div>
+                        <div class="user-navigation">
+                            {% include "widgets/navigation/usernav.html" %}
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+            <div id="below-navigation" class="page-center">
+                {% block below-top-bar %}
+                {% endblock %}
+            </div>
         </div>
-    {% endblock %}
-</div>
+    </body>
+    </html>
+{% endspaceless %}

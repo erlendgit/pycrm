@@ -1,0 +1,15 @@
+.breadcrumbs__list {
+  display: flex;
+}
+
+.breadcrumbs__list > li {
+  margin-right: .5rem;
+}
+
+.breadcrumbs__list > li:after {
+  content: " \00B7";
+}
+
+.breadcrumbs__list > li:last-child:after {
+  content: "";
+}

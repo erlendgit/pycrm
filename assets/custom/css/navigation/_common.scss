@@ -1,0 +1,32 @@
+
+.navigation-container {
+  position: relative;
+}
+
+
+.main-navigation {
+  .navigation {
+    display: flex;
+  }
+
+  .navigation > li {
+    margin-right: 1rem;
+  }
+
+  a, a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover, a:active {
+    color: #FFF;
+  }
+}
+
+
+.navigation-container .user-navigation {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+

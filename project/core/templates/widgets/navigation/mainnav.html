@@ -1,5 +1,5 @@
 {% load i18n %}
-<h2>{% trans "Main navigation" %}</h2>
+<h2 class="visually-hidden">{% trans "Main navigation" %}</h2>
 <ul class="navigation">
     <li><a href="{% url "core:home" %}">{% trans "Home" %}</a></li>
     {% if user.is_authenticated %}
