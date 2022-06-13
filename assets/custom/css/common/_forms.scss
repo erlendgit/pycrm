@@ -1,0 +1,23 @@
+.field-wrapper {
+  margin: .5rem 0;
+
+  .label {
+    display: block;
+    font-weight: 600;
+  }
+
+  textarea {
+    padding: .5rem;
+    width: 100%;
+    min-height: 444px;
+  }
+}
+
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+
+  .button-wrapper {
+    margin-left: 1rem;
+  }
+}

@@ -2,8 +2,14 @@
 
 {% load i18n %}
 
+{% block page_title %}{{ title }} | {% trans "CRM" %}{% endblock %}
+
+{% block content_head %}
+    <h1>{{ title }}</h1>
+{% endblock %}
+
 {% block below-top-bar %}
-    <div class="breadcrumbs">
+    <div class="breadcrumbs visually-hidden">
         <h2 class="visually-hidden">{% trans "Breadcrumbs" %}</h2>
         <ul class="breadcrumbs__list">
             {% block breadcrumbs %}

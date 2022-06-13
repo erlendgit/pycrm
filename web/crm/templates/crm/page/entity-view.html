@@ -1,0 +1,19 @@
+{% extends "page.html" %}
+
+{% load i18n %}
+{% load html_tools %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
+{% endblock %}
+
+{% block content_head %}
+    {{ block.super }}
+    <div class="update-button"><a href="{% url "crm:update" entity.id %}">{% trans "Update" %}</a></div>
+{% endblock %}
+
+{% block content %}
+    In the database since {{ entity.created_at.date }}
+{% markdown entity.pitch %}
+{% endblock %}

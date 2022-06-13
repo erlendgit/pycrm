@@ -1,0 +1,37 @@
+{% extends "page.html" %}
+
+{% load i18n %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
+    <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url "crm:update" entity.id %}">
+        {% csrf_token %}
+        {% for field in form %}
+            {% if field.widget_type == 'hidden' %}
+                {{ field }}
+            {% else %}
+                <div class="field-wrapper field--{{ field.name }} field--{{ field.widget_type }}">
+                    {{ field.errors }}
+                    <label for="{{ field.id_for_label }}" class="label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                        <p class="help">{{ field.help_text|safe }}</p>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="form-submit">
+            <div class="button-wrapper">
+                <a href="{% url 'crm:view' entity.id %}">{% trans "Cancel" %}</a>
+            </div>
+            <div class="button-wrapper">
+                <button type="submit">{% trans "Save" %}</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

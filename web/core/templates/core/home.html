@@ -2,9 +2,10 @@
 
 {% load i18n %}
 
-{% block content_head %}
-    <h1>{% trans "Welcome" %}</h1>
-{% endblock %}
+<title>{% block page_title %}{% trans "Welcome" %} | {{ block.super }}{% endblock %}</title>
+
+
+
 
 {% block content %}
     {% trans "List of recent activities" %}

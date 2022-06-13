@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.utils.translation import gettext as _
 
 from core.forms import DateConvertForm
 from core.lib import next_or_home
@@ -8,7 +9,7 @@ from core.lib import next_or_home
 
 def home(request):
     return render(request, 'core/home.html', {
-        'user': request.user
+        'title': _('Welcome')
     })
 
 

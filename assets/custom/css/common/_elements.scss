@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.5em;
+}
+
+.markup-intended {
+  ul {
+    margin: .5rem 0;
+
+    & > li {
+      @extend .mu, .mu-pass;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        left: -1.5rem;
+      }
+
+      margin-left: 1.5rem;
+    }
+  }
+
+  p {
+    margin: .5rem 0;
+  }
+
+  b, strong {
+    font-weight: 600;
+  }
+  em, i {
+    font-style: italic;
+  }
+}

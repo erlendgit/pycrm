@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-11 10:59+0200\n"
+"POT-Creation-Date: 2022-06-13 21:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,122 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: pycrm/urls.py:29
+#: _etc/urls.py:31 core/templates/widgets/navigation/usernav.html:6
+#, fuzzy
+#| msgid "User registration"
+msgid "Site administration"
+msgstr "Gebruikersregistratie"
+
+#: core/forms.py:6
+msgid "Date and time"
+msgstr "Datum en tijd"
+
+#: core/templates/core/date_and_time.html:9
+msgid "Submit"
+msgstr "Versturen"
+
+#: core/templates/core/home.html:5 core/views.py:12
+msgid "Welcome"
+msgstr "Welkom"
+
+#: core/templates/core/home.html:11
+msgid "List of recent activities"
+msgstr "Lijst met recente activiteiten"
+
+#: core/templates/page.html:5 core/templates/root.html:9
 msgid "CRM"
 msgstr "CRM"
+
+#: core/templates/page.html:13
+msgid "Breadcrumbs"
+msgstr "Kruimelpad"
+
+#: core/templates/page.html:16 core/templates/widgets/navigation/mainnav.html:4
+msgid "Home"
+msgstr ""
+
+#: core/templates/widgets/navigation/mainnav.html:2
+msgid "Main navigation"
+msgstr "Hoofdmenu"
+
+#: core/templates/widgets/navigation/mainnav.html:6
+#: crm/templates/crm/page/entity-update.html:7
+#: crm/templates/crm/page/entity-view.html:7 crm/views.py:14
+msgid "Entities"
+msgstr "Kaartenbak"
+
+#: core/templates/widgets/navigation/mainnav.html:7
+msgid "Date convert"
+msgstr ""
+
+#: core/templates/widgets/navigation/usernav.html:2
+#, fuzzy
+#| msgid "User registration"
+msgid "User navigation"
+msgstr "Gebruikersregistratie"
+
+#: core/templates/widgets/navigation/usernav.html:5
+#, python-format
+msgid "Account: %(account)s"
+msgstr "Account: %(account)s"
+
+#: core/templates/widgets/navigation/usernav.html:7
+msgid "Logout"
+msgstr "Uitloggen"
+
+#: core/templates/widgets/navigation/usernav.html:9
+#: user/templates/user/login.html:5 user/templates/user/login.html:13
+msgid "Login"
+msgstr "Inloggen"
+
+#: crm/forms.py:14
+msgid "Name"
+msgstr "Naam"
+
+#: crm/forms.py:16
+msgid "Pitch"
+msgstr "Pitch"
+
+#: crm/templates/crm/page/entity-index.html:14
+msgid "No entities found."
+msgstr "Geen kaarten gevonden"
+
+#: crm/templates/crm/page/entity-update.html:26
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: crm/templates/crm/page/entity-update.html:27
+msgid "Save"
+msgstr "Opslaan"
+
+#: crm/templates/crm/page/entity-view.html:12
+msgid "Update"
+msgstr "Wijzigen"
+
+#: crm/views.py:38
+#, python-format
+msgid "Update %(name)s"
+msgstr "Wijzig %(name)s"
 
 #: user/apps.py:7
 msgid "User registration"
 msgstr "Gebruikersregistratie"
 
-#: user/forms.py:23
-msgid "E-mail"
-msgstr ""
+#: user/forms.py:30
+#, fuzzy
+#| msgid "email address"
+msgid "E-mail address"
+msgstr "e-mail adres"
 
-#: user/forms.py:24
+#: user/forms.py:31
 msgid "Password"
 msgstr "Wachtwoord"
+
+#: user/forms.py:39
+#, fuzzy
+#| msgid "E-mail or password is incorrect."
+msgid "E-mail address or password is incorrect."
+msgstr "E-mailadres of wachtwoord is onjuist."
 
 #: user/models.py:35
 msgid "email address"
@@ -44,7 +145,3 @@ msgstr "Gebruikersaccount"
 #: user/models.py:43
 msgid "User accounts"
 msgstr "Gebruikersaccounts"
-
-#: user/templates/user/login.html:6
-msgid "Login"
-msgstr "Inloggen"

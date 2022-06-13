@@ -27,7 +27,7 @@ class UserChangeForm(BaseUserChangeForm):
 
 class UserLoginForm(forms.Form):
     user = None
-    email = forms.CharField(label=_("E-mail"), required=True)
+    email = forms.CharField(label=_("E-mail address"), required=True)
     password = forms.CharField(label=_("Password"), required=True,
                                widget=forms.PasswordInput(attrs={"autocomplete": "current-password"}))
     next = forms.CharField(widget=forms.HiddenInput())
@@ -36,6 +36,6 @@ class UserLoginForm(forms.Form):
         self.user = authenticate(username=self.cleaned_data['email'],
                                  password=self.cleaned_data['password'])
         if not self.user:
-            raise ValidationError(_("Username or password is incorrect."))
+            raise ValidationError(_("E-mail address or password is incorrect."))
 
         return self.cleaned_data['password']
