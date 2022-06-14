@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load menu_tools %}
+
+{% if title %}
+    <h2 class="visually-hidden">{{ title }}</h2>
+{% elif item %}
+    <a href="{{ item.url }}"{% if is_active %} class="active"{% endif %}>{{ item.title }}</a>
+{% endif %}
+
+{% if has_children %}
+    <ul class="menu menu-{{ level }}">
+        {% for subitem in children %}
+            <li class="menu-item menu-item--{{ level }}">{% submenu subitem level %}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+

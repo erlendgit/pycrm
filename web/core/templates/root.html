@@ -2,6 +2,7 @@
 {% spaceless %}
     {% load static %}
     {% load i18n %}
+    {% load menu_tools %}
 
     <html lang="nl-nl">
     <head>
@@ -27,15 +28,18 @@
                 <div class="page-center navigation-container">
                     {% block navigation %}
                         <div class="main-navigation">
-                            {% include "widgets/navigation/mainnav.html" %}
+                            {% menu "main" %}
                         </div>
                         <div class="user-navigation">
-                            {% include "widgets/navigation/usernav.html" %}
+                            {% menu "user" %}
                         </div>
                     {% endblock %}
                 </div>
             </div>
             <div id="below-navigation" class="page-center">
+                {% if request.user.is_authenticated %}
+                    <div class="user-account">{% blocktrans with account=user.email %}Account: {{ account }}{% endblocktrans %}</div>
+                {% endif %}
                 {% block below-top-bar %}
                 {% endblock %}
             </div>

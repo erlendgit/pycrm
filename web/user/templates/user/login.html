@@ -2,15 +2,18 @@
 {% load i18n %}
 
 {% block content_head %}
-<h1>{% trans "Login" %}</h1>
+    <h1>{% trans "Login" %}</h1>
 {% endblock %}
 
 {% block content %}
-<div class="user-login-form">
-    <form method="post" action="{% url "user:login" %}{% if next %}?next={{ next }}{% endif %}">
-        {% csrf_token %}
-        {{ form }}
-        <button name="submit" type="submit">{% trans "Login" %}</button>
-    </form>
-</div>
+    <div class="user-login-form">
+        <form method="post" action="{% url "user:login" %}{% if next %}?next={{ next }}{% endif %}">
+            {% include 'elements/form.html' %}
+            <div class="form-submit">
+                <div class="button-wrapper">
+                    <button name="submit" type="submit">{% trans "Login" %}</button>
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock %}

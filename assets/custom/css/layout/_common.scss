@@ -1,23 +1,34 @@
 body {
-    font-family: monospace;
-    font-weight: 500;
-    line-height: 1.5rem;
+  font-family: monospace;
+  font-weight: 500;
+  line-height: 1.5rem;
 }
 
 #page-wrapper {
-    display: flex;
-    flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .page-center {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 888px;
-    display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 888px;
+  display: block;
 }
 
 .top-bar {
-    background: #003366;
-    color: #CCC;
-    margin: .5rem 0 0 0;
+  background: #003366;
+  color: #CCC;
+  margin: 2rem 0 0 0;
+  line-height: 3rem;
+}
+
+#below-navigation {
+  position: relative;
+
+  .user-account {
+    position: absolute;
+    right: 0;
+    top:0;
+  }
 }

@@ -4,33 +4,30 @@ ul.navigation {
 }
 
 .navigation-container {
-  position: relative;
-}
+  display: flex;
+  justify-content: space-between;
 
-
-.main-navigation {
-  .navigation {
+  ul.menu {
     display: flex;
   }
 
-  .navigation > li {
+  .menu-item > a {
+    &, &:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:hover, &.active {
+      color: #FFF;
+    }
+  }
+
+  .main-navigation .menu-item {
     margin-right: 1rem;
   }
 
-  a, a:visited {
-    color: inherit;
-    text-decoration: none;
+  .user-navigation .menu-item {
+    margin-left: 1rem;
   }
-
-  a:hover, a:active {
-    color: #FFF;
-  }
-}
-
-
-.navigation-container .user-navigation {
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
