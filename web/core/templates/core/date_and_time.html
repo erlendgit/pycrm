@@ -3,9 +3,9 @@
 {% load i18n %}
 
 {% block content %}
+    Current time: {{ time }}
     <form method="post" action="{% url "core:date_convert" %}">
-        {% csrf_token %}
-        {{ form }}
+        {% include "elements/form.html" %}
         <button type="submit">{% trans "Submit" %}</button>
     </form>
 {% endblock %}

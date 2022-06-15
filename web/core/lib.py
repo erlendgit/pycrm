@@ -47,8 +47,7 @@ def filter_html(value):
                         tags=['h2', 'h3', 'h4', 'h5',
                               'a', 'p', 'em', 'i', 'b', 'strong', 'abbr', 'acronym',
                               'ul', 'ol', 'li',
-                              'span', 'div', 'code',
-                              ],
+                              'span', 'div', 'code', 'pre'],
                         attributes={
                             '*': ['class', 'title', 'style'],
                             'a': ['href', 'rel'],

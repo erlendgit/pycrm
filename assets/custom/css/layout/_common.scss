@@ -9,6 +9,10 @@ body {
   flex-direction: column-reverse;
 }
 
+#page > .container {
+  margin: 1rem 0;
+}
+
 .page-center {
   margin: 0 auto;
   width: 100%;
@@ -21,6 +25,10 @@ body {
   color: #CCC;
   margin: 2rem 0 0 0;
   line-height: 3rem;
+}
+
+.page-title {
+  margin: 1rem 0;
 }
 
 #below-navigation {

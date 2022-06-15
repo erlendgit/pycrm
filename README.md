@@ -18,8 +18,17 @@ Content
   * Views
   * Forms
 * Companies
+  * Model
+  * Views
+  * Forms
 * Todo's
+  * Model
+  * Views
+  * Forms
 * Journal
+  * Model
+  * Views
+  * Forms
 
 General
 

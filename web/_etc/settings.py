@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('ENVIRONMENT_ID') not in ['production', 'stage']
 
 ALLOWED_HOSTS = ['localhost']
 
@@ -96,9 +96,9 @@ LOGIN_URL = '/user/login/'
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'nl-nl'
+LANGUAGE_CODE = os.getenv("SITE_LANGUAGE")
 
-TIME_ZONE = 'CET'
+TIME_ZONE = os.getenv("SITE_TIMEZONE")
 
 USE_I18N = True
 
