@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load html_tools %}
+{% load entity_tools %}
 
 {% block breadcrumbs %}
     {{ block.super }}
@@ -10,7 +11,9 @@
 
 {% block content_head %}
     {{ block.super }}
-    <div class="update-button"><a href="{% url "crm:update" entity.id %}">{% trans "Update" %}</a></div>
+    <div class="entity-navigation">
+        {% entity_menu entity.id %}
+    </div>
 {% endblock %}
 
 {% block content %}

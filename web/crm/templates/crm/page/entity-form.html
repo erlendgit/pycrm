@@ -5,18 +5,24 @@
 {% block breadcrumbs %}
     {{ block.super }}
     <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
-    <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+    {% if entity %}
+        <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
-    <form method="post" action="{% url "crm:update" entity.id %}">
+    <form method="post" action="{{ request.path }}">
         {% include 'elements/form.html' %}
         <div class="form-submit">
             <div class="button-wrapper">
                 <button type="submit">{% trans "Save" %}</button>
             </div>
             <div class="button-wrapper">
-                <a href="{% url 'crm:view' entity.id %}">{% trans "Cancel" %}</a>
+                {% if entity %}
+                    <a href="{% url 'crm:view' entity.id %}">{% trans "Cancel" %}</a>
+                {% else %}
+                    <a href="{% url 'crm:index' %}">{% trans "Cancel" %}</a>
+                {% endif %}
             </div>
         </div>
     </form>

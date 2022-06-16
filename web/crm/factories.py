@@ -1,6 +1,6 @@
 import factory
 
-from crm.models import Entity
+from crm.models import Entity, Reference
 
 
 class EntityFactory(factory.django.DjangoModelFactory):
@@ -10,3 +10,12 @@ class EntityFactory(factory.django.DjangoModelFactory):
 
     name = factory.Faker('name')
     pitch = factory.Faker('sentence')
+
+
+class ReferenceFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Reference
+
+    entity = factory.SubFactory(EntityFactory)
+    reference = factory.SubFactory(EntityFactory)
+    relation_type = factory.Faker('sentence')

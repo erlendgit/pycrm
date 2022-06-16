@@ -2,13 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-13 21:16+0200\n"
+"POT-Creation-Date: 2022-06-16 22:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,29 +15,59 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: _etc/urls.py:31 core/templates/widgets/navigation/usernav.html:6
-#, fuzzy
-#| msgid "User registration"
+#: _etc/urls.py:31 core/menu.py:13
 msgid "Site administration"
-msgstr "Gebruikersregistratie"
+msgstr "Websitebeheer"
 
 #: core/forms.py:6
 msgid "Date and time"
 msgstr "Datum en tijd"
 
+#: core/menu.py:6
+msgid "Main menu"
+msgstr "Hoofdmenu"
+
+#: core/menu.py:7 core/templates/page.html:16
+msgid "Home"
+msgstr "Voorpagina"
+
+#: core/menu.py:8 core/views.py:28
+msgid "Date convert"
+msgstr "Datum omzetten"
+
+#: core/menu.py:9 crm/templates/crm/page/entity-delete-form.html:7
+#: crm/templates/crm/page/entity-form.html:7
+#: crm/templates/crm/page/entity-relation-form.html:7
+#: crm/templates/crm/page/entity-view.html:9 crm/views.py:17
+msgid "Entities"
+msgstr "Kaartenbak"
+
+#: core/menu.py:11
+msgid "User menu"
+msgstr "Gebruikersmenu"
+
+#: core/menu.py:12 user/templates/user/login.html:5
+#: user/templates/user/login.html:14
+msgid "Login"
+msgstr "Inloggen"
+
+#: core/menu.py:14
+msgid "Logout"
+msgstr "Uitloggen"
+
 #: core/templates/core/date_and_time.html:9
 msgid "Submit"
 msgstr "Versturen"
 
-#: core/templates/core/home.html:5 core/views.py:12
+#: core/templates/core/home.html:5 core/views.py:13
 msgid "Welcome"
 msgstr "Welkom"
 
-#: core/templates/core/home.html:11
+#: core/templates/core/home.html:8
 msgid "List of recent activities"
 msgstr "Lijst met recente activiteiten"
 
-#: core/templates/page.html:5 core/templates/root.html:9
+#: core/templates/page.html:5 core/templates/root.html:10
 msgid "CRM"
 msgstr "CRM"
 
@@ -47,90 +75,135 @@ msgstr "CRM"
 msgid "Breadcrumbs"
 msgstr "Kruimelpad"
 
-#: core/templates/page.html:16 core/templates/widgets/navigation/mainnav.html:4
-msgid "Home"
-msgstr ""
-
-#: core/templates/widgets/navigation/mainnav.html:2
-msgid "Main navigation"
-msgstr "Hoofdmenu"
-
-#: core/templates/widgets/navigation/mainnav.html:6
-#: crm/templates/crm/page/entity-update.html:7
-#: crm/templates/crm/page/entity-view.html:7 crm/views.py:14
-msgid "Entities"
-msgstr "Kaartenbak"
-
-#: core/templates/widgets/navigation/mainnav.html:7
-msgid "Date convert"
-msgstr ""
-
-#: core/templates/widgets/navigation/usernav.html:2
-#, fuzzy
-#| msgid "User registration"
-msgid "User navigation"
-msgstr "Gebruikersregistratie"
-
-#: core/templates/widgets/navigation/usernav.html:5
+#: core/templates/root.html:43
 #, python-format
 msgid "Account: %(account)s"
 msgstr "Account: %(account)s"
 
-#: core/templates/widgets/navigation/usernav.html:7
-msgid "Logout"
-msgstr "Uitloggen"
-
-#: core/templates/widgets/navigation/usernav.html:9
-#: user/templates/user/login.html:5 user/templates/user/login.html:13
-msgid "Login"
-msgstr "Inloggen"
-
-#: crm/forms.py:14
+#: crm/forms.py:20
 msgid "Name"
 msgstr "Naam"
 
-#: crm/forms.py:16
+#: crm/forms.py:22
 msgid "Pitch"
 msgstr "Pitch"
+
+#: crm/forms.py:39
+msgid "Relation"
+msgstr "Relatie"
+
+#: crm/forms.py:40
+msgid "Relation type"
+msgstr "Relatie type"
+
+#: crm/forms.py:45
+msgid "Select entity"
+msgstr "Kies een kaart"
+
+#: crm/forms.py:67
+msgid "I am sure"
+msgstr "Ik weet het zeker"
+
+#: crm/models.py:30
+msgid "References to self are not allowed."
+msgstr "Relaties met zichzelf zijn niet toegestaan."
+
+#: crm/models.py:32
+msgid "Relate only one time from one entity to another."
+msgstr "Relaties kunnen maar 1 keer gelegd worden."
+
+#: crm/templates/crm/page/entity-delete-form.html:13
+#, python-format
+msgid ""
+"Are you sure you want to delete %(name)s. This operation can not be undone."
+msgstr ""
+"Weet u zeker dat u %(name)s wilt verwijderen? Deze handeling kan niet "
+"ongedaan gemaakt worden."
+
+#: crm/templates/crm/page/entity-delete-form.html:18
+#: crm/templatetags/entity_tools.py:20
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: crm/templates/crm/page/entity-delete-form.html:21
+#: crm/templates/crm/page/entity-form.html:22
+#: crm/templates/crm/page/entity-form.html:24
+#: crm/templates/crm/page/entity-relation-form.html:20
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: crm/templates/crm/page/entity-form.html:18
+msgid "Save"
+msgstr "Opslaan"
 
 #: crm/templates/crm/page/entity-index.html:14
 msgid "No entities found."
 msgstr "Geen kaarten gevonden"
 
-#: crm/templates/crm/page/entity-update.html:26
-msgid "Cancel"
-msgstr "Annuleren"
+#: crm/templates/crm/page/entity-relation-form.html:17
+#: crm/templatetags/entity_tools.py:19
+msgid "Add relation"
+msgstr "Relatie toevoegen"
 
-#: crm/templates/crm/page/entity-update.html:27
-msgid "Save"
-msgstr "Opslaan"
+#: crm/templatetags/entity_tools.py:12
+msgid "Entity menu"
+msgstr "Kaartenbak"
 
-#: crm/templates/crm/page/entity-view.html:12
+#: crm/templatetags/entity_tools.py:18
 msgid "Update"
 msgstr "Wijzigen"
 
-#: crm/views.py:38
+#: crm/views.py:37
+#, python-format
+msgid "Changes to %(name)s are now stored in the database."
+msgstr "Wijzigingen aan %(name)s zijn opgeslagen in de database."
+
+#: crm/views.py:45
 #, python-format
 msgid "Update %(name)s"
 msgstr "Wijzig %(name)s"
+
+#: crm/views.py:56
+#, python-format
+msgid "%(name)s is now related."
+msgstr "%(name)s is nu gekoppeld."
+
+#: crm/views.py:64
+#, python-format
+msgid "Add relation to %(name)s"
+msgstr "Koppel een kaart aan %(name)s"
+
+#: crm/views.py:75
+#, python-format
+msgid "Entity %(name)s is removed."
+msgstr "Kaart %(name)s is verwijderd."
+
+#: crm/views.py:83
+#, python-format
+msgid "Delete %(name)s"
+msgstr "Verwijder %(name)s"
+
+#: crm/views.py:93
+msgid "Created a new entity."
+msgstr "Nieuwe kaart gemaakt."
+
+#: crm/views.py:100
+msgid "Create entity"
+msgstr "Kaart maken"
 
 #: user/apps.py:7
 msgid "User registration"
 msgstr "Gebruikersregistratie"
 
 #: user/forms.py:30
-#, fuzzy
-#| msgid "email address"
 msgid "E-mail address"
-msgstr "e-mail adres"
+msgstr "E-mail adres"
 
 #: user/forms.py:31
 msgid "Password"
 msgstr "Wachtwoord"
 
 #: user/forms.py:39
-#, fuzzy
-#| msgid "E-mail or password is incorrect."
 msgid "E-mail address or password is incorrect."
 msgstr "E-mailadres of wachtwoord is onjuist."
 
