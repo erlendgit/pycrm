@@ -15,13 +15,14 @@ body {
 
 .page-center {
   margin: 0 auto;
+  padding: 0 3rem;
   width: 100%;
-  max-width: 888px;
+  max-width: 950px;
   display: block;
 }
 
 .top-bar {
-  background: #003366;
+  background: $blue2;
   color: #CCC;
   margin: 2rem 0 0 0;
   line-height: 3rem;
@@ -36,7 +37,12 @@ body {
 
   .user-account {
     position: absolute;
-    right: 0;
+    right: 3rem;
     top:0;
   }
+}
+
+.relation-label {
+  font-weight: bold;
+  text-transform: uppercase;
 }

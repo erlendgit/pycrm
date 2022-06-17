@@ -8,9 +8,10 @@ $microns-font-file: '../fonts/microns/microns';
 
 // Styles.
 @import 'common/elements';
+@import 'layout/common';
 @import 'common/markup';
 @import 'common/forms';
-@import 'layout/common';
+@import 'common/messages';
 @import 'navigation/common';
 @import 'navigation/breadcrumbs';
 @import 'common/tags';
