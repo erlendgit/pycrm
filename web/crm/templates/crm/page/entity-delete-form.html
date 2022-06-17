@@ -5,12 +5,12 @@
 {% block breadcrumbs %}
     {{ block.super }}
     <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
-    <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+    <li><a href="{{ entity.url }}">{{ entity.name }}</a></li>
 {% endblock %}
 
 
 {% block content %}
-    <p>{% blocktrans with name=entity.name %}Are you sure you want to delete {{ name }}. This operation can not be undone.{% endblocktrans %}</p>
+    <p>{% blocktrans with name=entity.name %}Are you sure you want to delete {{ name }}? This operation can not be undone.{% endblocktrans %}</p>
     <form method="post" action="{{ request.path }}">
         {% include 'elements/form.html' %}
         <div class="form-submit">
@@ -18,7 +18,7 @@
                 <button type="submit">{% trans "Delete" %}</button>
             </div>
             <div class="button-wrapper">
-                    <a href="{% url 'crm:view' entity.id %}">{% trans "Cancel" %}</a>
+                    <a href="{{ entity.url }}">{% trans "Cancel" %}</a>
             </div>
         </div>
     </form>

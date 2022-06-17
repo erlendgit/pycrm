@@ -6,7 +6,7 @@
     {{ block.super }}
     <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
     {% if entity %}
-        <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+        <li><a href="{{ entity.url }}">{{ entity.name }}</a></li>
     {% endif %}
 {% endblock %}
 
@@ -19,7 +19,7 @@
             </div>
             <div class="button-wrapper">
                 {% if entity %}
-                    <a href="{% url 'crm:view' entity.id %}">{% trans "Cancel" %}</a>
+                    <a href="{{ entity.url }}">{% trans "Cancel" %}</a>
                 {% else %}
                     <a href="{% url 'crm:index' %}">{% trans "Cancel" %}</a>
                 {% endif %}

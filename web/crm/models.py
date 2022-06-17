@@ -1,6 +1,7 @@
 import uuid
 
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext as _
 
@@ -22,6 +23,10 @@ class Entity(models.Model):
 
     class Meta:
         ordering = ('name', '-created_at')
+
+    @property
+    def url(self):
+        return reverse('crm:view', args=(self.id,))
 
 
 class ReferenceManager(models.Manager):

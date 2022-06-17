@@ -7,7 +7,7 @@
         {% if entities.count > 0 %}
             <ul>
                 {% for entity in entities %}
-                    <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+                    <li><a href="{{ entity.url }}">{{ entity.name }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}

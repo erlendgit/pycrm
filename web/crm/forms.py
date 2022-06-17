@@ -21,14 +21,15 @@ class EntityUpdateForm(forms.Form):
     pitch = forms.CharField(widget=forms.Textarea(), required=False,
                             label=_("Pitch"))
 
-    def save(self):
+    def update(self):
         assert self.is_valid(), "There are still errors"
-        if self.entity:
-            self.entity.name = self.cleaned_data['name']
-            self.entity.pitch = self.cleaned_data['pitch']
-            self.entity.save()
-            return self.entity
+        self.entity.name = self.cleaned_data['name']
+        self.entity.pitch = self.cleaned_data['pitch']
+        self.entity.save()
+        return self.entity
 
+    def create(self):
+        assert self.is_valid(), "There are still errors"
         return Entity.objects.create(
             name=self.cleaned_data['name'],
             pitch=self.cleaned_data['pitch'],

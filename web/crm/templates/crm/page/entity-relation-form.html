@@ -5,7 +5,7 @@
 {% block breadcrumbs %}
     {{ block.super }}
     <li><a href="{% url "crm:index" %}">{% trans "Entities" %}</a></li>
-    <li><a href="{% url "crm:view" entity.id %}">{{ entity.name }}</a></li>
+    <li><a href="{{ entity.url }}">{{ entity.name }}</a></li>
 {% endblock %}
 
 
@@ -17,7 +17,7 @@
                 <button type="submit">{% trans "Add relation" %}</button>
             </div>
             <div class="button-wrapper">
-                <a href="{% url 'crm:view' entity.id %}">{% trans "Cancel" %}</a>
+                <a href="{{ entity.url }}">{% trans "Cancel" %}</a>
             </div>
         </div>
     </form>

@@ -31,11 +31,11 @@ def view(request, id):
 def update(request, id):
     entity = get_object_or_404(Entity, pk=id)
     if request.method == 'POST':
-        form = EntityUpdateForm(request.POST)
+        form = EntityUpdateForm(request.POST, entity=entity)
         if form.is_valid():
-            saved = form.save()
+            saved = form.update()
             messages.info(request, _("Changes to %(name)s are now stored in the database.") % {"name": saved.name})
-            return HttpResponseRedirect(reverse("crm:view", args=[entity.id]))
+            return HttpResponseRedirect(entity.url)
     else:
         form = EntityUpdateForm(entity=entity)
 
@@ -54,7 +54,7 @@ def relate(request, id):
         if form.is_valid():
             relation = form.save()
             messages.info(request, _("%(name)s is now related.") % {"name": relation.reference.name})
-            return HttpResponseRedirect(reverse("crm:view", args=[entity.id]))
+            return HttpResponseRedirect(entity.url)
     else:
         form = EntityRelationForm(entity=entity)
 
@@ -89,9 +89,9 @@ def create(request):
     if request.method == 'POST':
         form = EntityUpdateForm(request.POST)
         if form.is_valid():
-            entity = form.save()
+            entity = form.update()
             messages.info(request, _("Created a new entity."))
-            return HttpResponseRedirect(reverse("crm:view", args=[entity.id]))
+            return HttpResponseRedirect(entity.url)
     else:
         form = EntityUpdateForm()
 
