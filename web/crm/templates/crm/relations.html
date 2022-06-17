@@ -1,0 +1,8 @@
+{% for type, references in relations %}
+    <h3 class="relation-label">{{ type }}</h3>
+    <ul class="relation-items">
+        {% for reference in references %}
+            <li><a href="{{ reference.url }}">{{ reference.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endfor %}

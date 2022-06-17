@@ -18,4 +18,4 @@ class ReferenceFactory(factory.django.DjangoModelFactory):
 
     entity = factory.SubFactory(EntityFactory)
     reference = factory.SubFactory(EntityFactory)
-    relation_type = factory.Faker('sentence')
+    relation_type = 'For testing'

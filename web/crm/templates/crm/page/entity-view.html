@@ -17,6 +17,7 @@
 {% endblock %}
 
 {% block content %}
-    In the database since {{ entity.created_at.date }}
-{% markdown entity.pitch %}
+    {% blocktrans with date=entity.created_at.date %}In the database since {{ date }}{% endblocktrans %}
+    {% markdown entity.pitch %}
+    {% entity_relations entity %}
 {% endblock %}
