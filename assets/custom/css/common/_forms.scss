@@ -13,8 +13,24 @@
   }
 }
 
+.field-wrapper.field--checkbox {
+  display: flex;
+  justify-content: flex-start;
+
+  [type=checkbox] {
+    margin-top: .3rem;
+    margin-right: .3rem;
+    order: -2;
+  }
+  .label {
+    font-weight: normal;
+    order: -1;
+  }
+}
+
 .form-submit {
   display: flex;
+
   .button-wrapper {
     margin-right: 1rem;
   }
